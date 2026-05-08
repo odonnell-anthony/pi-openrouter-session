@@ -34,7 +34,7 @@ This extension automatically:
 
 ### Prerequisites
 
-- [pi](https://pi.dev) installed (`npm install -g @mariozechner/pi-coding-agent`)
+- [pi](https://pi.dev) installed (`npm install -g @earendil-works/pi-coding-agent)
 - An [OpenRouter API key](https://openrouter.ai/keys)
 
 ### Method 1: Install from npm (Recommended)
@@ -114,18 +114,6 @@ When you start pi, you should see:
 ```
 [openrouter-session] Ready, base session ID: 2026-05-06T12-00-00-000Z_019dbbc7-...
 ```
-
-On your first OpenRouter request (unnamed session):
-```
-[openrouter-session] Using session_id: 2026-05-06T12-00-00-000Z_019dbbc7-...
-```
-
-Or if you've named the session with `/name just testing`:
-```
-[openrouter-session] Using session_id: just-testing-019dbbc7
-```
-
-Or check for the notification: "OpenRouter session tracking enabled"
 
 ### 4. View Sessions in OpenRouter Console
 
@@ -253,7 +241,7 @@ MIT
 
 - [pi](https://pi.dev) - The minimal terminal coding harness
 - [OpenRouter](https://openrouter.ai) - Unified API for LLM access
-- [pi-mono](https://github.com/badlogic/pi-mono) - Pi's source code and documentation
+- [pi-mono](https://github.com/earendil-works/pi) - Pi's source code and documentation
 
 ## Support
 
