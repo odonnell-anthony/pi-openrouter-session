@@ -12,6 +12,7 @@ This extension automatically:
 - Injects the `session_id` field into every OpenRouter API request
 - Re-resolves the session name on every request, so renaming mid-session takes effect immediately
 - Allows you to view conversation threads in the OpenRouter console
+- Works on macOS, Linux, and Windows (session file paths are resolved for both POSIX and Windows separators)
 
 ### Session ID format
 
@@ -128,7 +129,7 @@ When you start pi, you should see:
 The extension uses pi's extension API to:
 
 1. **Establish base ID** (`session_start` event):
-   - Extracts the full filename (without `.jsonl`) as the stable base ID
+   - Extracts the full filename (without `.jsonl`) as the stable base ID, regardless of whether the session file path uses POSIX (`/`) or Windows (`\`) separators
    - Pi session filenames have the format `<ISO-timestamp>_<uuid>` (e.g. `2026-05-06T12-00-00-000Z_019dbbc7-c8c5-748c-8710-3fdf6fefc083`)
    - Falls back to generating a random ID for ephemeral sessions (`--no-session`)
 
