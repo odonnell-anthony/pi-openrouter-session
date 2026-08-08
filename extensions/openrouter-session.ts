@@ -82,7 +82,9 @@ export default function (pi: ExtensionAPI) {
       // Extract the filename without extension as the stable base ID
       // e.g. "~/.pi/agent/sessions/--home--/2026-05-06T12-00-00-000Z_019dbbc7-c8c5-748c-8710-3fdf6fefc083.jsonl"
       //   -> "2026-05-06T12-00-00-000Z_019dbbc7-c8c5-748c-8710-3fdf6fefc083"
-      const match = sessionFile.match(/([^/]+)\.jsonl$/);
+      // Windows paths use backslashes, so exclude both separators
+      // e.g. "C:\\Users\\me\\.pi\\agent\\sessions\\2026-05-06T12-00-00-000Z_019dbbc7-c8c5-748c-8710-3fdf6fefc083.jsonl"
+      const match = sessionFile.match(/([^/\\]+)\.jsonl$/);
       baseSessionId = match ? match[1] : null;
     }
 
